@@ -1,6 +1,6 @@
 # ProyectoCRM
 
-## Descripcion del sistema:
+## ☁️ Descripcion del sistema:
 
 Este proyecto es un proyecto de Angular que utiliza APIs para conectar una base de datos relacional para conectar emprendedores de manera que puedan conectar usuarios, clientes potenciaoles, manejar interacciones comerciales y oportunidades.
 
