@@ -1,6 +1,7 @@
 .container {
   display: flex;
   height: 100vh;
+  width: 100vw;
   font-family: Arial, sans-serif;
 }
 
@@ -13,26 +14,40 @@
 }
 
 .left-panel .logo {
-  width: 200px;
+  width: 450px;
 }
 
 .right-panel {
-  flex: 1;
-  background: white;
+  flex: 0.9;
+  font-size: 40px;
+  background: rgb(229, 230, 229);
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: -15px;
+  text-align: center;
+  margin-right: -20px;
+  border-radius: 50px;
 }
 
+
 h2 {
-  color: #003366;
+  color: #106ecc;
   margin-bottom: 10px;
+  font-size: 68px;
+  margin-top: -20px;
 }
 
 p {
+  color: #110e0e;
+  font-size: 33px;
   margin-bottom: 30px;
+  margin-left: -40px;
+  margin-right: -50px;
+  margin-top: 5px;
+
 }
 
 form {
@@ -43,23 +58,34 @@ form {
 }
 
 input {
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 18px;
+  border-radius: 25px;
+  border: 2px solid #33df08;
   outline: none;
   text-align: center;
-  background-color: #e6f0f8;
+  background-color: #FFFFFF;
+  color: #33df08;
+  margin-left: -60px;
+  margin-right: -60px;
+  font-size: 18px;
+}
+input::placeholder {
+  color: #4caf50; /* color placeholder */
 }
 
 button {
-  padding: 10px;
+  padding: 15px;
   border-radius: 20px;
   border: none;
   background-color: #005b96;
   color: white;
   font-weight: bold;
   cursor: pointer;
+  margin-left: 15px;
+  margin-right: 20px;
+  font-size: 18px;
+  margin-top: 5px;
 }
 
 button:hover {
@@ -68,8 +94,10 @@ button:hover {
 
 .forgot {
   text-align: center;
-  font-size: 0.9em;
+  font-size: 20px;
   color: #666;
   margin-bottom: 10px;
   text-decoration: none;
+  margin-left: 65x;
+  margin-top: 5px;
 }
