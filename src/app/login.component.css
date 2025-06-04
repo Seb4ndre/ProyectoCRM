@@ -1,24 +1,50 @@
 .container {
   display: flex;
   height: 100vh;
-  width: 100vw;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
 
 .left-panel {
   flex: 1;
-  background: linear-gradient(to bottom right, #003366, #005b96);
+  position: relative;
+  z-index: 0;
+  
+  background-image: url('/assets/fondoizq.png');
+  background-size: 130% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  margin: -15px -15px -14px -8px; /* top | right | bottom | left */
 }
 
+
+
+
 .left-panel .logo {
-  width: 450px;
+  width: 90%;
+  max-width: 750px;
+  height: auto;
+  aspect-ratio: 3.5 / 1.8;
+  border-radius: 30px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 
 .right-panel {
   flex: 0.9;
+  position: relative;
+  z-index: 1;
+
   font-size: 40px;
   background: rgb(229, 230, 229);
   padding: 40px;
@@ -26,9 +52,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: -15px;
+  margin: -15px -10px -16px -8px; /* top | right | bottom | left */
   text-align: center;
-  margin-right: -20px;
   border-radius: 50px;
 }
 
@@ -71,7 +96,7 @@ input {
   font-size: 18px;
 }
 input::placeholder {
-  color: #4caf50; /* color placeholder */
+  color: #4caf50;
 }
 
 button {
