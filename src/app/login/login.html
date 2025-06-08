@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="left-panel">
+    <img src="assets/logo.jpg" alt="APAPROPH Logo" class="logo" />
+  </div>
+  <div class="right-panel">
+    <h2>Bienvenido</h2>
+    <p>Ingresa con tu usuario para continuar</p>
+    
+    <form (ngSubmit)="onSubmit()">
+      <input
+        type="email"
+        placeholder="Correo"
+        [(ngModel)]="email"
+        name="email"
+        required
+        class="input-verde"
+      />
+      <input
+        type="password"
+        placeholder="Contraseña"
+        [(ngModel)]="password"
+        name="password"
+        required
+        class="input-verde"
+      />
+      <a href="#" class="forgot">&#xbf;Olvidaste tu contraseña?</a>
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
+</div>
