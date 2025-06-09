@@ -3,126 +3,426 @@
 <head>
   <meta charset="UTF-8">
   <title>Listado de Socios</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap%405.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="vista-asociados.css">
-  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .main-wrapper {
+      margin-top: 70px;
+      margin-left: 230px;
+      background-color: #74C6BD;
+      padding: 2%;
+      min-height: 100vh;
+    }
+
+    .titulo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2%;
+      padding: 0 1%;
+    }
+
+    .titulo h1 {
+      font-size: 1.8rem;
+      color: #000;
+      margin: 0;
+    }
+
+    .titulo h4 {
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 0.2rem;
+    }
+
+    .titulo button {
+      background-color: #015288;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 0.95rem;
+    }
+
+    .titulo button:hover {
+      background-color: #013f67;
+    }
+
+    .main-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+    }
+
+    .main-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .main-table thead {
+      background-color: #e0e0e0;
+      font-weight: bold;
+    }
+
+    .main-table th,
+    .main-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .main-table td:last-child {
+      text-align: center;
+    }
+
+    .btn-sm {
+      padding: 4px 8px;
+      font-size: 0.8rem;
+    }
+
+    .header-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background-color: #f4ffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      z-index: 1001;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .header-logo img {
+      height: 50px;
+    }
+
+    .header-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .header-user img {
+      height: 38px;
+      width: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 230px;
+      background-color: #015288;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 70px;
+      z-index: 1000;
+    }
+
+    .sidebar-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      padding-left: 1.5rem;
+    }
+
+    .sidebar-menu a {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+
+    .sidebar-menu a:hover {
+      background-color: #013f6b;
+      padding-left: 0.5rem;
+      border-left: 4px solid white;
+    }
+
+    .sidebar-menu a i {
+      margin-right: 0.75rem;
+      font-size: 1.2rem;
+    }
+
+    .sidebar-menu .active {
+      background-color: #01436e;
+      border-left: 4px solid white;
+      padding-left: 0.5rem;
+    }
+
+    .logout {
+      padding-left: 1.5rem;
+      padding-bottom: 1rem;
+    }
+
+    .logout a {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .logout a i {
+      margin-right: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .titulo-tabla {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 0 0.5rem;
+    }
+
+    .titulo-tabla h2 {
+      font-size: 1.5rem;
+      margin: 0;
+      color: #000;
+    }
+
+    .titulo-tabla p {
+      font-size: 0.95rem;
+      color: #333;
+      margin: 0;
+    }
+
+    .btn-add {
+      background-color: #015288;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .btn-add:hover {
+      background-color: #013f67;
+    }
+
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.95rem;
+    }
+
+    .styled-table thead {
+      background-color: #e0e0e0;
+      text-align: left;
+    }
+
+    .styled-table th,
+    .styled-table td {
+      padding: 14px 12px;
+      border-bottom: 1px solid #ddd;
+      vertical-align: middle;
+    }
+
+    .styled-table input[type="checkbox"] {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+
+    .btn-action {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin: 0 4px;
+    }
+
+    .btn-action.edit {
+      color: #007bff;
+    }
+
+    .btn-action.delete {
+      color: #dc3545;
+    }
+
+    .titulo-tabla {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 0;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .titulo-tabla > div {
+      text-align: left;
+    }
+
+    .main-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+      max-width: 1000px;
+      margin: 0 auto; /* Centra la tabla */
+    }
+
+    body, html {
+      background-color: #74C6BD; /* Asegura el color de fondo total */
+      height: 100%;
+    }
+  </style>
 </head>
-<body class="p-4">
- <div class="main-wrapper">
-  <div  class= "titulo"> 
-    <h1 class="text-left text-dark py-3">Asociados</h1>
-    <h4 class="text-top text-dark py-3">Lista de los Asociados</h4>
-    <button type="button" class="btn btn-secondary btn-block">Añadir Asociado</button>
+
+<body>
+
+  <!-- Header superior -->
+  <div class="header-top">
+    <div class="header-logo">
+      <img src="assets/logo.jpg" alt="Logo de APAPROPH">
+    </div>
+    <div class="header-user">
+      Juana Vazquez
+      <img src="assets/ruta-avatar.jpg" alt="Foto de perfil">
+      <i class="bi bi-caret-down-fill"></i>
+    </div>
   </div>
-  <div class="container main-container">
 
-    <!-- Fila de títulos -->
-    <div class="row main-row border-bottom text-center fw-bold" style="background-color:#ddd">
-      <h4 class="col-4 d-flex justify-content-center gap-2">Asociado</h4>
-      <h4 class="col-2">Email</h4>
-      <h4 class="col-2">Departamento</h4>
-      <h4 class="col-2">Rol</h4>
-      <h4 class="col-2">Acción</h4>
+  <!-- Sidebar lateral -->
+  <div class="sidebar">
+    <div class="sidebar-menu">
+      <a href="#" class="active"><i class="fas fa-chart-line"></i> Dashboard</a>
+      <a href="#"><i class="fas fa-users"></i> Tabla de Asociados</a>
+      <a href="#"><i class="fas fa-building"></i> Tabla de PH</a>
+      <a href="#"><i class="fas fa-star"></i> Menu Label</a>
+      <a href="#"><i class="fas fa-star"></i> Menu Label</a>
+      <a href="#"><i class="fas fa-star"></i> Menu Label</a>
+      <a href="#"><i class="fas fa-star"></i> Menu Label</a>
     </div>
-
-    <!-- Filas de contenido con botones con iconos -->
-    <div class="row main-row">
-      <div class="col-12 align-center">
-        <div class="row p-3 align-items-center text-center">
-          <div class="col-4">Lindsey Stroud</div>
-          <div class="col-2">lindseyexample.com</div>
-          <div class="col-2">Marketing</div>
-          <div class="col-2">Manager</div>
-          <div class="col-2 d-flex justify-content-center gap-2">
-            <button type="button" class="btn btn-primary btn-sm">
-              <i class="bi bi-pencil"></i>
-            </button>
-            <button type="button" class="btn btn-danger btn-sm">
-              <i class="bi bi-trash"></i>
-            </button>
-          </div>
-        </div>
-      </div>
+    <div class="logout">
+      <a href="#"><i class="fas fa-user"></i> Cerrar Sesión</a>
     </div>
-
-    <div class="row main-row">
-      <div class="col-12 align-center">
-        <div class="row p-3 align-items-center text-center">
-          <div class="col-4">Carlos Pérez</div>
-          <div class="col-2">carlosexample.com</div>
-          <div class="col-2">Ventas</div>
-          <div class="col-2">Ejecutivo</div>
-          <div class="col-2 d-flex justify-content-center gap-2">
-            <button type="button" class="btn btn-primary btn-sm">
-              <i class="bi bi-pencil"></i>
-            </button>
-            <button type="button" class="btn btn-danger btn-sm">
-              <i class="bi bi-trash"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row main-row">
-      <div class="col-12 align-center">
-        <div class="row p-3 align-items-center text-center">
-          <div class="col-4">Ana Gómez</div>
-          <div class="col-2">anaexample.com</div>
-          <div class="col-2">Desarrollo</div>
-          <div class="col-2">Ingeniera</div>
-          <div class="col-2 d-flex justify-content-center gap-2">
-            <button type="button" class="btn btn-primary btn-sm">
-              <i class="bi bi-pencil"></i>
-            </button>
-            <button type="button" class="btn btn-danger btn-sm">
-              <i class="bi bi-trash"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row main-row">
-      <div class="col-12 align-center">
-        <div class="row p-3 align-items-center text-center">
-          <div class="col-4">María López</div>
-          <div class="col-2">mariaexample.com</div>
-          <div class="col-2">Finanzas</div>
-          <div class="col-2">Analista</div>
-          <div class="col-2 d-flex justify-content-center gap-2">
-            <button type="button" class="btn btn-primary btn-sm">
-              <i class="bi bi-pencil"></i>
-            </button>
-            <button type="button" class="btn btn-danger btn-sm">
-              <i class="bi bi-trash"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row main-row">
-      <div class="col-12 align-center">
-        <div class="row p-3 align-items-center text-center">
-          <div class="col-4">Juan Martínez</div>
-          <div class="col-2">juanexample.com</div>
-          <div class="col-2">Recursos Humanos</div>
-          <div class="col-2">Coordinador</div>
-          <div class="col-2 d-flex justify-content-center gap-2">
-            <button type="button" class="btn btn-primary btn-sm">
-              <i class="bi bi-pencil"></i> 
-            </button>
-            <button type="button" class="btn btn-danger btn-sm">
-              <i class="bi bi-trash"></i> 
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
- </div>
+
+  <!-- Contenido principal -->
+  <div class="main-wrapper">
+    <div class="titulo-tabla">
+      <div>
+        <h2>Asociados</h2>
+        <p>Lista de los asociados</p>
+      </div>
+      <button class="btn-add">Añadir Asociado</button>
+    </div>
+
+    <div class="container main-container">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Asociado</th>
+            <th>Email</th>
+            <th>Departamento</th>
+            <th>Rol</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td><img src="assets/avatar1.jpg" class="avatar" /> Lindsey Stroud</td>
+            <td>lindsey.stroud&#64;gmail.com</td> <!-- Se usa esto para que se vea el signo de @ -->
+            <td>Technology Department</td>
+            <td>Head of Technology</td>
+            <td>
+              <button class="btn-action edit"><i class="bi bi-pencil-square"></i></button>
+              <button class="btn-action delete"><i class="bi bi-trash-fill"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td><img src="assets/avatar2.jpg" class="avatar" /> Sarah Brown</td>
+            <td>sarah.brown&#64;gmail.com</td>
+            <td>Technology Department</td>
+            <td>Head of Technology</td>
+            <td>
+              <button class="btn-action edit"><i class="bi bi-pencil-square"></i></button>
+              <button class="btn-action delete"><i class="bi bi-trash-fill"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td><img src="assets/avatar3.jpg" class="avatar" /> Michael Owen</td>
+            <td>michael.owen&#64;gmail.com</td>
+            <td>Technology Department</td>
+            <td>Head of Technology</td>
+            <td>
+              <button class="btn-action edit"><i class="bi bi-pencil-square"></i></button>
+              <button class="btn-action delete"><i class="bi bi-trash-fill"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td><img src="assets/avatar4.jpg" class="avatar" /> Mary Jane</td>
+            <td>mary.jane&#64;gmail.com</td>
+            <td>Technology Department</td>
+            <td>Head of Technology</td>
+            <td>
+              <button class="btn-action edit"><i class="bi bi-pencil-square"></i></button>
+              <button class="btn-action delete"><i class="bi bi-trash-fill"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td><img src="assets/avatar5.jpg" class="avatar" /> Peter Dodle</td>
+            <td>peter.dodle&#64;gmail.com</td>
+            <td>Technology Department</td>
+            <td>Head of Technology</td>
+            <td>
+              <button class="btn-action edit"><i class="bi bi-pencil-square"></i></button>
+              <button class="btn-action delete"><i class="bi bi-trash-fill"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
 </body>
 </html>
