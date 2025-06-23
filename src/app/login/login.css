@@ -14,7 +14,7 @@
   z-index: 0;
   
   background-image: url('/assets/fondoizq.png');
-  background-size: 130% 100%;
+  background-size: 120% 100%;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -23,7 +23,7 @@
   align-items: center;
 
   overflow: hidden;
-  margin: -8px -15px -12px -8px; /* top | right | bottom | left */
+  margin: -8px -15px -14px -8px; /* top | right | bottom | left */
 }
 
 
@@ -42,21 +42,22 @@
 
 
 .right-panel {
-  flex: 0.6;
+  flex: 0.9;
   position: relative;
   z-index: 1;
   font-size: 40px;
   background: rgb(229, 230, 229);
-  padding: 15px;
+  padding: 95px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: -9px -8px -12px -10px; /* top | right | bottom | left */
+  margin: -9px -8px -14px -10px; /* top | right | bottom | left */
   text-align: center;
   border-radius: 30px;
   border-top-right-radius: 0%;
   border-bottom-right-radius: 0%;
+  transform: translateX(208px);
 
 }
 
