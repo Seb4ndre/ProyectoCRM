@@ -3,6 +3,7 @@ import { provideRouter, Routes } from '@angular/router';
 import { App } from './app/app'; // Asegúrate del nombre correcto
 import { LoginComponent } from './app/login/login';
 import { VistaAsociados } from './app/vista-asociados/vista-asociados';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
 
 bootstrapApplication(App, {
   providers: [
+    provideHttpClient(withInterceptorsFromDi()),
     provideRouter(routes)
   ]
 }).catch(err => console.error(err));

@@ -13,6 +13,8 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/ProyectoCRMs",
+            "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -69,6 +71,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+            
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -81,7 +84,10 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "src/vista-asociados/vista-asociados.css",
+              "src/login/login.css"
             ]
           }
         }

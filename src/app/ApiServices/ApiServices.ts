@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { environment } from '../environments/environment'; // Desde ApiServices.ts
+//import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -26,11 +26,7 @@ export class ConfiguracionesApiServices {
   }
 
   // Ejemplo de método que se conecta a una API
-  ObtenerTiposCategoria(datos: any): Observable<any> {
-    return this.http.post<any>(
-      `${environment.URL_Api}api/Solicitud/TestUC`,
-      datos,
-      httpOptions
-    );
+  ChequearID(datos: any): Observable<any> {
+    return this.http.post<any>(`https://localhost:7077/api/UsuariosMA/TestUC`, datos);
   }
 }
