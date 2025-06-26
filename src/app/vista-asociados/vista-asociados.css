@@ -30,8 +30,8 @@
   padding: 1%;
   background-color: #015288;
   width: 15%;
-
 }
+
 .main-container {
   margin-top: 5%;
   padding: 1% 0;
@@ -45,3 +45,136 @@
   width: 100%;
 }
 
+
+/* Main wrapper empujado hacia abajo del header */
+.main-wrapper {
+  margin-top: 70px;
+  margin-left: 230px;
+  background-color: #74C6BD;
+  padding: 2%;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo para tabla visualmente clara */
+.main-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.main-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.main-table thead {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+.main-table th,
+.main-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.main-table td:last-child {
+  text-align: center;
+}
+
+.btn-sm {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+
+
+/* Nueva tabla tipo moderna para asociados */
+.titulo-tabla {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+}
+
+.titulo-tabla h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #000;
+}
+
+.titulo-tabla p {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 0;
+}
+
+.btn-add {
+  background-color: #015288;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-add:hover {
+  background-color: #013f67;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+.styled-table thead {
+  background-color: #e0e0e0;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.styled-table input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.btn-action {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin: 0 4px;
+}
+
+.btn-action.edit {
+  color: #007bff;
+}
+
+.btn-action.delete {
+  color: #dc3545;
+}
