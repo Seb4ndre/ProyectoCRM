@@ -1,12 +1,13 @@
 .container {
   display: flex;
-  height: 98vh;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 98vh;
 
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
-
 
 .left-panel {
   flex: 1;
@@ -19,16 +20,14 @@
   overflow: hidden;
   margin: 0;
 
-  background-image: url('/assets/fondoizq.png');
+  background-image: url("/assets/fondoizq.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   transform: scaleX(1.4) scaleY(1.04);
-  transform-origin: left center;    
+  transform-origin: left center;
 }
-
-
 
 .left-panel .logo {
   width: 70%;
@@ -41,7 +40,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   margin: 0px 0px 0px -50px; /* top, right, bottom, left */
 }
-
 
 .right-panel {
   flex: 0.9;
@@ -62,8 +60,6 @@
   transform: translateX(205px);
 }
 
-
-
 h2 {
   color: #106ecc;
   margin-bottom: 10px;
@@ -78,7 +74,6 @@ p {
   margin-left: -40px;
   margin-right: -50px;
   margin-top: 5px;
-
 }
 
 form {
@@ -95,7 +90,7 @@ input {
   border: 2px solid #33df08;
   outline: none;
   text-align: center;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #33df08;
   margin-left: -60px;
   margin-right: -60px;

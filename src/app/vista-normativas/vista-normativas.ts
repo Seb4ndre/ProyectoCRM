@@ -4,10 +4,10 @@ import { BarraLateral } from '../barra-lateral/barra-lateral';
 import { BarraSuperior } from '../barra-superior/barra-superior';
 
 @Component({
-  selector: 'app-socios',
+  selector: 'app-vista-normativas',
   standalone: true,
-  templateUrl: './vista-asociados.html',
-  styleUrls: ['./vista-asociados.css'],
   imports: [CommonModule, BarraLateral, BarraSuperior],
+  templateUrl: './vista-normativas.html',
+  styleUrl: './vista-normativas.css',
 })
-export class VistaAsociados {}
+export class VistaNormativas {}

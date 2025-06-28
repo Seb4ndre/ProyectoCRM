@@ -1,16 +1,22 @@
-<p>barra-lateral works!</p>
 <!-- Sidebar lateral -->
-  <div class="sidebar">
-    <div class="sidebar-menu">
-      <a href="#" class="active"><i class="fas fa-chart-line"></i> Dashboard</a>
-      <a href="#"><i class="fas fa-users"></i> Tabla de Asociados</a>
-      <a href="#"><i class="fas fa-building"></i> Tabla de PH</a>
-      <a href="#"><i class="fas fa-book"></i> Normativas</a>
-      <a href="#"><i class="fas fa-star"></i> Menu Label</a>
-      <a href="#"><i class="fas fa-star"></i> Menu Label</a>
-      <a href="#"><i class="fas fa-star"></i> Menu Label</a>
-    </div>
-    <div class="logout">
-      <a href="#"><i class="fas fa-user"></i> Cerrar Sesión</a>
-    </div>
+<div class="sidebar">
+  <div class="sidebar-menu">
+    <a routerLink="/vista-asociados" routerLinkActive="active"
+      ><i class="fas fa-user"></i>Tabla de Asociados</a
+    >
+    <a routerLink="/vista-ph" routerLinkActive="active"
+      ><i class="fas fa-building"></i> Tabla de PH</a
+    >
+    <a routerLink="/vista-normativas" routerLinkActive="active"
+      ><i class="fas fa-book"></i>Normativas</a
+    >
+    <a routerLink="/dashboard" routerLinkActive="active"
+      ><i class="fas fa-chart-line"></i> Dashboard</a
+    >
   </div>
+  <div class="logout">
+    <a routerLink="/login" routerLinkActive="active"
+      ><i class="fas fa-user"></i>Cerrar sesión</a
+    >
+  </div>
+</div>
