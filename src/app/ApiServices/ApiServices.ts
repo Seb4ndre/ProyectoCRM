@@ -27,6 +27,6 @@ export class ConfiguracionesApiServices {
 
   // Método corregido
   ChequearID(datos: any): Observable<any> {
-    return this.http.post<any>(`${environment.URL_Api}api/UsuariosMA/TestUC`, datos, httpOptions);
+    return this.http.post<any>(`${environment.URL_Api}api/UsuariosMA/TestUC`, datos);
   }
 }
