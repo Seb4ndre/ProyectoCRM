@@ -1,108 +1,35 @@
-.main-wrapper {
-  background-color: #75c5ba;
-  margin: 4% 1%; /* 4% arriba/abajo y 1% a los lados */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-.titulo {
-  margin-bottom: -8.5%; /* espacio entre el título y el container */
-  margin-left: 2%;
-  margin-right: 2%;
-}
-
-.titulo h1 {
-  text-transform: arial;
-  font-size: 300%; /* equivalente a 2.5rem */
-  margin-bottom: 0;
-}
-
-.titulo h4 {
-  text-transform: arial;
-  font-size: 110%; /* equivalente a 1.2rem */
-  margin-top: -1.5%;
-}
-
-.titulo button {
-  text-transform: arial;
-  font-weight: bold;
-  font-size: 110%; /* equivalente a 1.2rem */
-  margin-top: -7%;
-  margin-left: 85%;
-  padding: 1%;
-  background-color: #015288;
-  width: 15%;
-}
-
-.main-container {
-  margin-top: 5%;
-  padding: 1% 0;
-  width: 100%;
-  max-width: 96%;
-}
-
-.row.main-row {
-  background-color: #f3f0f0;
-  margin: 1% 0;
-  width: 100%;
-}
-
-/* Main wrapper empujado hacia abajo del header */
 .main-wrapper {
   margin-top: 70px;
   margin-left: 230px;
   background-color: #74c6bd;
   padding: 2%;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
 }
 
-/* Estilo para tabla visualmente clara */
-.main-container {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  overflow-x: auto;
-}
-
-.main-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.main-table thead {
-  background-color: #e0e0e0;
-  font-weight: bold;
-}
-
-.main-table th,
-.main-table td {
-  padding: 12px 16px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-.main-table td:last-child {
-  text-align: center;
-}
-
-.btn-sm {
-  padding: 4px 8px;
-  font-size: 0.8rem;
-}
-
-/* Nueva tabla tipo moderna para asociados */
 .titulo-tabla {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding: 0 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding: 0 1.5rem 0 2.5rem;
+}
+
+.titulo-tabla-texto {
+  transform: translateY(40px);
+  margin-left: -25px;
 }
 
 .titulo-tabla h2 {
   font-size: 1.5rem;
   margin: 0;
   color: #000;
+  font-weight: bold;
 }
 
 .titulo-tabla p {
@@ -111,7 +38,17 @@
   margin: 0;
 }
 
+.main-container {
+  margin-top: 60px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón */
 .btn-add {
+  transform: translateY(40px);
   background-color: #015288;
   color: white;
   border: none;
@@ -126,48 +63,41 @@
   background-color: #013f67;
 }
 
-.styled-table {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-  background-color: #fff;
-  border-radius: 6px;
-  overflow: hidden;
-  font-size: 0.95rem;
-}
-
-.styled-table thead,
-.styled-table tbody {
-  display: block;
-}
-
-.styled-table thead {
-  background-color: #e0e0e0;
-  text-align: center;
-}
-
-.styled-table tbody {
-  text-align: center;
-  height: 300px; /* Ajusta según lo que necesites */
+/* Contenedor con scroll */
+.tabla-scroll-wrapper {
+  max-height: 300px;
   overflow-y: auto;
 }
 
+/* Tabla */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.95rem;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+/* Encabezado de tabla */
+.styled-table thead {
+  background-color: #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Celdas */
 .styled-table th,
 .styled-table td {
-  width: 20%;
-  padding: 0.875rem 0.75rem;
+  padding: 12px 16px;
   border-bottom: 1px solid #ddd;
+  text-align: center;
   vertical-align: middle;
   box-sizing: border-box;
 }
 
-.styled-table thead tr,
-.styled-table tbody tr {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-}
-
+/* Botones */
 .btn-action {
   border: none;
   background: none;
@@ -176,16 +106,10 @@
   margin: 0 4px;
 }
 
-.btn-action.edit {
+.btn-action.view {
   color: #007bff;
 }
 
-.btn-action.delete {
-  color: #dc3545;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+.btn-action.download {
+  color: #35dc7b;
 }

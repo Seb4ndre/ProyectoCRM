@@ -15,16 +15,18 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="vista-normativas.css" />
   </head>
 
   <body>
     <!-- llamado de las barras laterales y superiores -->
     <app-barra-superior></app-barra-superior>
     <app-barra-lateral></app-barra-lateral>
+
     <!-- Contenido principal -->
     <div class="main-wrapper">
       <div class="titulo-tabla">
-        <div>
+        <div class="titulo-tabla-texto">
           <h2>Normativas</h2>
           <p>Lista de normativas</p>
         </div>
@@ -32,92 +34,97 @@
       </div>
 
       <div class="container main-container">
-        <table class="styled-table">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Artículo</th>
-              <th>Título</th>
-              <th>Descripción</th>
-              <th>Fecha de creación</th>
-              <th>Categoría</th>
-              <th>Acción</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lindsey Stroud</td>
-              <td>lindsey.stroud&#64;gmail.com</td>
-              <!-- Se usa esto para que se vea el signo de @ -->
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Sarah Brown</td>
-              <td>sarah.brown&#64;gmail.com</td>
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Michael Owen</td>
-              <td>michael.owen&#64;gmail.com</td>
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Mary Jane</td>
-              <td>mary.jane&#64;gmail.com</td>
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Peter Dodle</td>
-              <td>peter.dodle&#64;gmail.com</td>
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="tabla-scroll-wrapper">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Artículo</th>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Fecha de creación</th>
+                <th>Categoría</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Art. 5</td>
+                <td>Normas de convivencia</td>
+                <td>Comportamiento en áreas comunes y horario de silencio.</td>
+                <td>2023-02-15</td>
+                <td>Reglamento interno</td>
+                <td>
+                  <button class="btn-action view">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                  <button class="btn-action download">
+                    <i class="bi bi-download"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Art. 8</td>
+                <td>Mantenimiento de fachadas</td>
+                <td>Mantener en buen estado la fachada visible de su unidad.</td>
+                <td>2023-09-01</td>
+                <td>Normativa Técnica</td>
+                <td>
+                  <button class="btn-action view">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                  <button class="btn-action download">
+                    <i class="bi bi-download"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Art. 33</td>
+                <td>Asambleas y votaciones</td>
+                <td>Asamblesa y el sistema de votación válido.</td>
+                <td>2023-11-05</td>
+                <td>Procedimiento Administrativo</td>
+                <td>
+                  <button class="btn-action view">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                  <button class="btn-action download">
+                    <i class="bi bi-download"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Art. 2</td>
+                <td>Ingreso de visitantes</td>
+                <td>Permitir visitantes a zonas privada y comunes.</td>
+                <td>2024-03-10</td>
+                <td>Política de Seguridad</td>
+                <td>
+                  <button class="btn-action view">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                  <button class="btn-action download">
+                    <i class="bi bi-download"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Art. 17</td>
+                <td>Cuotas de administración</td>
+                <td>Consecuencias del no pago de las cuotas.</td>
+                <td>2023-04-20</td>
+                <td>Reglamento Económico</td>
+                <td>
+                  <button class="btn-action view">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                  <button class="btn-action download">
+                    <i class="bi bi-download"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </body>

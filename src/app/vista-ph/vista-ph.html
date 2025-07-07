@@ -15,16 +15,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="vista-ph.css" />
   </head>
 
   <body>
-    <!-- llamado de las barras laterales y superiores -->
     <app-barra-superior></app-barra-superior>
     <app-barra-lateral></app-barra-lateral>
-    <!-- Contenido principal -->
+
     <div class="main-wrapper">
       <div class="titulo-tabla">
-        <div>
+        <div class="titulo-tabla-texto">
           <h2>Propiedades horizontales</h2>
           <p>Lista de propiedades horizontales</p>
         </div>
@@ -32,91 +32,91 @@
       </div>
 
       <div class="container main-container">
-        <table class="styled-table">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Nombre del PH</th>
-              <th>Ubicación</th>
-              <th>Valor</th>
-              <th>Estado</th>
-              <th>Acción</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lindsey Stroud</td>
-              <td>lindsey.stroud&#64;gmail.com</td>
-              <!-- Se usa esto para que se vea el signo de @ -->
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Sarah Brown</td>
-              <td>sarah.brown&#64;gmail.com</td>
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Michael Owen</td>
-              <td>michael.owen&#64;gmail.com</td>
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Mary Jane</td>
-              <td>mary.jane&#64;gmail.com</td>
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Peter Dodle</td>
-              <td>peter.dodle&#64;gmail.com</td>
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="tabla-scroll-wrapper">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Nombre del PH</th>
+                <th>Ubicación</th>
+                <th>Valor</th>
+                <th>Estado</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PH BAHIA</td>
+                <td>Nueva Gorgona, Panamá Oeste</td>
+                <td>B/.285,000</td>
+                <td>Bien mantenido</td>
+                <td>
+                  <button class="btn-action edit">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn-action delete">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>PH Greenview</td>
+                <td>Santa María, Ciudad de Panamá</td>
+                <td>B/.275,000</td>
+                <td>En excelente condición</td>
+                <td>
+                  <button class="btn-action edit">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn-action delete">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>PH Costamare</td>
+                <td>Costa Sur, Ciudad de Panamá</td>
+                <td>B/.235,000</td>
+                <td>Requiere atención</td>
+                <td>
+                  <button class="btn-action edit">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn-action delete">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>PH Asia</td>
+                <td>Costa del Este, Ciudad de Panamá</td>
+                <td>B/.325,000</td>
+                <td>Totalmente remodelado</td>
+                <td>
+                  <button class="btn-action edit">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn-action delete">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>PH ICON TOWER</td>
+                <td>Coco del Mar, Ciudad de Panamá</td>
+                <td>B/.550,000</td>
+                <td>Bien mantenido</td>
+                <td>
+                  <button class="btn-action edit">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn-action delete">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </body>
