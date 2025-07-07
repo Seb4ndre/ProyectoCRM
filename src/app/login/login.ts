@@ -26,19 +26,20 @@ export class LoginComponent {
       contraseña: this.password
     };
 
-      this.configuracionesApiServices.ChequearID(datos).subscribe(
-        (res) => {
-          if (res?.autenticado) {
-            // Login exitoso
-            this.router.navigate(['/vista-asociados']);
-          } else {
-            alert('Usuario o contraseña incorrectos');
-          }
-        },
-        (error) => {
-          console.error('Error al autenticar:', error);
-          alert('Error al conectar con el servidor'+ (error.message || JSON.stringify(error)));
-        }
-      );
+  this.configuracionesApiServices.ChequearID(datos).subscribe(
+    (res: boolean) => {
+      if (res) {
+        // Login exitoso
+        this.router.navigate(['/vista-asociados']);
+      } else {
+        alert('Usuario o contraseña incorrectos');
+      }
+    },
+    (error) => {
+      console.error('Error al autenticar:', error);
+      alert('Error al conectar con el servidor: ' + (error.message || JSON.stringify(error)));
+    }
+  );
+
   }
 }
