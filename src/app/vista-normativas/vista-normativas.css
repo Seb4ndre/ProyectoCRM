@@ -4,12 +4,21 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.contenido-flex {
+  display: flex;
+}
+
 .main-wrapper {
-  margin-top: 70px;
-  margin-left: 230px;
   background-color: #74c6bd;
-  padding: 2%;
+  padding: 100px 2% 2% 2%;
   min-height: 100vh;
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+  margin-left: 230px;
+}
+
+.main-wrapper.expandido {
+  margin-left: 0 !important;
 }
 
 .titulo-tabla {
@@ -46,7 +55,6 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Botón */
 .btn-add {
   transform: translateY(40px);
   background-color: #015288;
@@ -63,13 +71,11 @@ body {
   background-color: #013f67;
 }
 
-/* Contenedor con scroll */
 .tabla-scroll-wrapper {
   max-height: 300px;
   overflow-y: auto;
 }
 
-/* Tabla */
 .styled-table {
   width: 100%;
   border-collapse: collapse;
@@ -79,7 +85,6 @@ body {
   border-radius: 6px;
 }
 
-/* Encabezado de tabla */
 .styled-table thead {
   background-color: #e0e0e0;
   position: sticky;
@@ -87,7 +92,6 @@ body {
   z-index: 1;
 }
 
-/* Celdas */
 .styled-table th,
 .styled-table td {
   padding: 12px 16px;
@@ -97,7 +101,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Botones */
 .btn-action {
   border: none;
   background: none;
@@ -112,4 +115,13 @@ body {
 
 .btn-action.download {
   color: #35dc7b;
+}
+
+
+/*IPAD MINI*/
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+}
+
+/*Samsung S8+*/
+@media screen and (max-width: 600px) {
 }

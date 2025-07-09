@@ -18,104 +18,107 @@
   </head>
 
   <body>
-    <!-- llamado de las barras laterales y superiores -->
-    <app-barra-superior></app-barra-superior>
-    <app-barra-lateral></app-barra-lateral>
-    <!-- Contenido principal -->
-    <div class="main-wrapper">
-      <div class="titulo-tabla">
-        <div class="titulo-tabla-texto">
-          <h2>Asociados</h2>
-          <p>Lista de los asociados</p>
-        </div>
-        <button class="btn-add">Añadir asociado</button>
-      </div>
+    <!-- Barra superior -->
+    <app-barra-superior (toggleMenu)="toggleSidebar()"></app-barra-superior>
 
-      <div class="container main-container">
-        <table class="styled-table">
-          <thead>
-            <tr>
-              <th>Asociado</th>
-              <th>Email</th>
-              <th>Departamento</th>
-              <th>Rol</th>
-              <th>Acción</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lindsey Stroud</td>
-              <td>lindsey.stroud&#64;gmail.com</td>
-              <!-- Se usa esto para que se vea el signo de @ -->
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Sarah Brown</td>
-              <td>sarah.brown&#64;gmail.com</td>
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Michael Owen</td>
-              <td>michael.owen&#64;gmail.com</td>
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Mary Jane</td>
-              <td>mary.jane&#64;gmail.com</td>
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Peter Dodle</td>
-              <td>peter.dodle&#64;gmail.com</td>
-              <td>Technology Department</td>
-              <td>Head of Technology</td>
-              <td>
-                <button class="btn-action edit">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn-action delete">
-                  <i class="bi bi-trash-fill"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="contenido-flex">
+      <!-- Barra lateral -->
+      <app-barra-lateral [oculta]="sidebarOculta"></app-barra-lateral>
+
+      <div class="main-wrapper" [class.expandido]="sidebarOculta">
+        <div class="titulo-tabla">
+          <div class="titulo-tabla-texto">
+            <h2>Asociados</h2>
+            <p>Lista de los asociados</p>
+          </div>
+          <button class="btn-add">Añadir asociado</button>
+        </div>
+
+        <div class="container main-container">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Asociado</th>
+                <th>Email</th>
+                <th>Departamento</th>
+                <th>Rol</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Lindsey Stroud</td>
+                <td>lindsey.stroud&#64;gmail.com</td>
+                <td>Technology Department</td>
+                <td>Head of Technology</td>
+                <td>
+                  <button class="btn-action edit">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn-action delete">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Sarah Brown</td>
+                <td>sarah.brown&#64;gmail.com</td>
+                <td>Technology Department</td>
+                <td>Head of Technology</td>
+                <td>
+                  <button class="btn-action edit">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn-action delete">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Michael Owen</td>
+                <td>michael.owen&#64;gmail.com</td>
+                <td>Technology Department</td>
+                <td>Head of Technology</td>
+                <td>
+                  <button class="btn-action edit">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn-action delete">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mary Jane</td>
+                <td>mary.jane&#64;gmail.com</td>
+                <td>Technology Department</td>
+                <td>Head of Technology</td>
+                <td>
+                  <button class="btn-action edit">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn-action delete">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Peter Dodle</td>
+                <td>peter.dodle&#64;gmail.com</td>
+                <td>Technology Department</td>
+                <td>Head of Technology</td>
+                <td>
+                  <button class="btn-action edit">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn-action delete">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </body>

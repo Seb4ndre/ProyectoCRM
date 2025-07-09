@@ -47,7 +47,7 @@
 
 /* Baja solo el primer ítem (Dashboard) */
 .sidebar-menu a:first-child {
-  margin-top: 20px;
+  margin-top: 70px;
 }
 
 /* Hover y activo */
@@ -76,3 +76,25 @@
 }
 
 /*boton*/
+.sidebar {
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar.oculta {
+  transform: translateX(-100%);
+}
+.sidebar {
+  width: 250px;
+  transition: transform 0.3s ease;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #015288;
+  color: white;
+  padding: 20px;
+}
+
+
+

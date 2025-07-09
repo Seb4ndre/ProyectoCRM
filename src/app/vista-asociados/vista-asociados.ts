@@ -10,4 +10,10 @@ import { BarraSuperior } from '../barra-superior/barra-superior';
   styleUrls: ['./vista-asociados.css'],
   imports: [CommonModule, BarraLateral, BarraSuperior],
 })
-export class VistaAsociados {}
+export class VistaAsociados {
+   sidebarOculta = false;
+
+  toggleSidebar() {
+    this.sidebarOculta = !this.sidebarOculta;
+  }
+}

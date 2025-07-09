@@ -10,4 +10,10 @@ import { BarraSuperior } from '../barra-superior/barra-superior';
   templateUrl: './vista-ph.html',
   styleUrl: './vista-ph.css',
 })
-export class VistaPh {}
+export class VistaPh {
+  sidebarOculta = false;
+
+  toggleSidebar() {
+    this.sidebarOculta = !this.sidebarOculta;
+  }
+}

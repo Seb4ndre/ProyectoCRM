@@ -4,12 +4,25 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.contenido-flex {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Contenido principal */
 .main-wrapper {
-  margin-top: 70px;
-  margin-left: 230px;
   background-color: #74c6bd;
-  padding: 2%;
+  padding: 100px 2% 2% 2%;
   min-height: 100vh;
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+  margin-left: 230px;
+}
+
+/* barra lateral oculta */
+.main-wrapper.expandido {
+  margin-left: 0 !important;
 }
 
 .titulo-tabla {
@@ -38,14 +51,13 @@ body {
   margin: 0;
 }
 
-.titulo-tabla {
-  margin-bottom: 2.5rem;
-}
-
 .main-container {
   margin-top: 60px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-
 
 .btn-add {
   transform: translateY(40px);
@@ -63,20 +75,12 @@ body {
   background-color: #013f67;
 }
 
-.main-container {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Scroll externo */
+/* Tabla con scroll */
 .tabla-scroll-wrapper {
   max-height: 300px;
   overflow-y: auto;
 }
 
-/* Tabla */
 .styled-table {
   width: 100%;
   border-collapse: collapse;
@@ -91,9 +95,24 @@ body {
   position: sticky;
   top: 0;
   z-index: 1;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 }
 
-/* Celdas */
+.styled-table tbody {
+  display: block;
+  height: 300px;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.styled-table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
 .styled-table th,
 .styled-table td {
   padding: 12px 16px;
@@ -103,7 +122,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Botones */
 .btn-action {
   border: none;
   background: none;
@@ -118,4 +136,76 @@ body {
 
 .btn-action.delete {
   color: #dc3545;
+}
+
+/*IPAD MINI*/
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+}
+
+/*Samsung S8+*/
+@media screen and (max-width: 600px) {
+  .main-wrapper {
+    margin-left: 0;
+    margin-top: 60px;
+    padding: 1rem 0.5rem;
+  }
+
+  .titulo-tabla {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0.5rem;
+  }
+
+  .titulo-tabla-texto {
+    transform: none;
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .titulo-tabla h2 {
+    font-size: 1rem; 
+    margin: 0;
+  }
+
+  .titulo-tabla p {
+    font-size: 0.7rem;
+    margin: 0.2rem 0;
+  }
+
+  .btn-add {
+    width: auto;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    align-self: flex-end;
+    margin-top: 0.3rem;
+  }
+
+  /* Contenedor principal */
+  .main-container {
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  /* Scroll horizontal en tabla */
+  .tabla-scroll-wrapper {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .styled-table {
+    min-width: 600px; 
+    font-size: 0.7rem;
+  }
+
+  .styled-table th,
+  .styled-table td {
+    padding: 6px 8px;
+  }
+
+  /* Botones */
+  .btn-action {
+    font-size: 0.85rem;
+    margin: 0 2px;
+    padding: 2px 6px;
+  }
 }

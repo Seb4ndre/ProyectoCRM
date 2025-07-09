@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter  } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Para *ngIf, *ngFor, etc.
 
 @Component({
@@ -8,5 +8,11 @@ import { CommonModule } from '@angular/common'; // Para *ngIf, *ngFor, etc.
   templateUrl: './barra-superior.html',
   styleUrls: ['./barra-superior.css']
 })
-export class BarraSuperior {}
+export class BarraSuperior {
+  @Output() toggleMenu = new EventEmitter<void>();
+
+  onToggle() {
+    this.toggleMenu.emit();
+  }
+}
 

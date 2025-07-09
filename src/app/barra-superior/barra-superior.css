@@ -33,7 +33,7 @@
   object-fit: cover;
 }
 
-/* Botón de alternancia oculto por defecto */
+/* Botón */
 .toggle-sidebar {
   display: none;
   position: fixed;
@@ -48,6 +48,6 @@
 
 @media screen and (max-width: 600px) {
   .toggle-sidebar {
-    display: block; /* Visible solo en móviles */
+    display: block; 
   }
 }

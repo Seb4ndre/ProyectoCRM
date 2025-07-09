@@ -123,66 +123,136 @@ button:hover {
   color: #666;
   margin-bottom: 10px;
   text-decoration: none;
-  margin-left: 65px;  /* ← corregido: antes era 65x */
+  margin-left: 65px; 
   margin-right: -200px;
   margin-top: 5px;
 }
 
-/* ===================== */
-/* RESPONSIVE            */
-/* ===================== */
-
-@media screen and (max-width: 1024px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .left-panel, .right-panel {
-    width: 100%;
-    flex: none;
-    border-radius: 0;
+/*IPAD MINI*/
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  html, body {
     margin: 0;
-    padding: 40px 20px;
-    transform: none;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+    background: rgb(229, 230, 229);
   }
 
-  .left-panel {
-    transform: none;
-    background-size: cover;
-  }
-
-  .left-panel .logo {
-    width: 80%;
-    max-width: 500px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: rgb(229, 230, 229);
+    padding: 0;
     margin: 0 auto;
   }
 
+  .left-panel,
   .right-panel {
+    width: 100% !important;
+    max-width: 100vw;
+    margin: 0;
+    padding: 20px;
+    flex: none;
+    border-radius: 0;
+    transform: none !important;
+  }
+
+  .left-panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .left-panel .logo {
+    width: 90%;
+    max-width: 500px;
+    margin: 10px auto;
+  }
+
+  .right-panel {
+    padding-top: 80px;
     text-align: center;
+  }
+
+  h2 {
+    font-size: 3.8rem;
+    margin: 10px 0;
+  }
+
+  p {
+    font-size: 2rem;
+    margin: 15px 0;
+  }
+
+  input {
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 18px;
+    margin: 10px 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: -3.0px;
+  }
+
+  .forgot {
+    font-size: 1.5rem;
+    margin: 5px 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
+/*Samsung S8+*/
 @media screen and (max-width: 600px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgb(229, 230, 229);
+  }
+
   .container {
+    display: flex;
     flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(229, 230, 229);
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
   }
 
   .left-panel, .right-panel {
     width: 100%;
     padding: 20px;
-    border-radius: 0;
     margin: 0;
+    border-radius: 0;
+    box-sizing: border-box;
+    transform: none !important;
   }
 
   .right-panel {
-    padding-top: 65px;
+    padding-top: 15px;
     text-align: center;
+    align-items: center !important;
   }
 
   .left-panel .logo {
     width: 90%;
     max-width: 400px;
     margin: 10px auto;
+    display: block;
   }
 
   h2 {
@@ -195,38 +265,39 @@ button:hover {
     margin: 10px 0;
   }
 
+  form {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto; 
+  }
+
   input {
     width: 100%;
     font-size: 1rem;
     padding: 15px;
     margin: 10px 0;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box;
   }
 
   button {
     width: 100%;
     font-size: 1rem;
     padding: 12px;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 10px 0 0 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box;
   }
 
   .forgot {
     font-size: 0.9rem;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: rgb(229, 230, 229);
-}
-
-  .container {
-    min-height: 100vh;
-    background: rgb(229, 230, 229);
+    margin: 10px 0 0 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: center;
   }
 }
+
+

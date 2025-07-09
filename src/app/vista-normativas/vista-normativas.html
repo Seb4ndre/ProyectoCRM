@@ -15,115 +15,97 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="vista-normativas.css" />
   </head>
 
   <body>
-    <!-- llamado de las barras laterales y superiores -->
-    <app-barra-superior></app-barra-superior>
-    <app-barra-lateral></app-barra-lateral>
+    <app-barra-superior (toggleMenu)="toggleSidebar()"></app-barra-superior>
 
-    <!-- Contenido principal -->
-    <div class="main-wrapper">
-      <div class="titulo-tabla">
-        <div class="titulo-tabla-texto">
-          <h2>Normativas</h2>
-          <p>Lista de normativas</p>
+    <div class="contenido-flex">
+      <!-- Barra lateral -->
+      <app-barra-lateral [oculta]="sidebarOculta"></app-barra-lateral>
+
+      <!-- Contenido principal -->
+      <div class="main-wrapper" [ngClass]="{ 'expandido': sidebarOculta }">
+        <div class="titulo-tabla">
+          <div class="titulo-tabla-texto">
+            <h2>Normativas</h2>
+            <p>Lista de normativas</p>
+          </div>
+          <button class="btn-add">Añadir normativa</button>
         </div>
-        <button class="btn-add">Añadir normativa</button>
-      </div>
 
-      <div class="container main-container">
-        <div class="tabla-scroll-wrapper">
-          <table class="styled-table">
-            <thead>
-              <tr>
-                <th>Artículo</th>
-                <th>Título</th>
-                <th>Descripción</th>
-                <th>Fecha de creación</th>
-                <th>Categoría</th>
-                <th>Acción</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Art. 5</td>
-                <td>Normas de convivencia</td>
-                <td>Comportamiento en áreas comunes y horario de silencio.</td>
-                <td>2023-02-15</td>
-                <td>Reglamento interno</td>
-                <td>
-                  <button class="btn-action view">
-                    <i class="bi bi-eye"></i>
-                  </button>
-                  <button class="btn-action download">
-                    <i class="bi bi-download"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Art. 8</td>
-                <td>Mantenimiento de fachadas</td>
-                <td>Mantener en buen estado la fachada visible de su unidad.</td>
-                <td>2023-09-01</td>
-                <td>Normativa Técnica</td>
-                <td>
-                  <button class="btn-action view">
-                    <i class="bi bi-eye"></i>
-                  </button>
-                  <button class="btn-action download">
-                    <i class="bi bi-download"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Art. 33</td>
-                <td>Asambleas y votaciones</td>
-                <td>Asamblesa y el sistema de votación válido.</td>
-                <td>2023-11-05</td>
-                <td>Procedimiento Administrativo</td>
-                <td>
-                  <button class="btn-action view">
-                    <i class="bi bi-eye"></i>
-                  </button>
-                  <button class="btn-action download">
-                    <i class="bi bi-download"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Art. 2</td>
-                <td>Ingreso de visitantes</td>
-                <td>Permitir visitantes a zonas privada y comunes.</td>
-                <td>2024-03-10</td>
-                <td>Política de Seguridad</td>
-                <td>
-                  <button class="btn-action view">
-                    <i class="bi bi-eye"></i>
-                  </button>
-                  <button class="btn-action download">
-                    <i class="bi bi-download"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Art. 17</td>
-                <td>Cuotas de administración</td>
-                <td>Consecuencias del no pago de las cuotas.</td>
-                <td>2023-04-20</td>
-                <td>Reglamento Económico</td>
-                <td>
-                  <button class="btn-action view">
-                    <i class="bi bi-eye"></i>
-                  </button>
-                  <button class="btn-action download">
-                    <i class="bi bi-download"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="container main-container">
+          <div class="tabla-scroll-wrapper">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Artículo</th>
+                  <th>Título</th>
+                  <th>Descripción</th>
+                  <th>Fecha de creación</th>
+                  <th>Categoría</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Art. 5</td>
+                  <td>Normas de convivencia</td>
+                  <td>Comportamiento en áreas comunes y horario de silencio.</td>
+                  <td>2023-02-15</td>
+                  <td>Reglamento interno</td>
+                  <td>
+                    <button class="btn-action view"><i class="bi bi-eye"></i></button>
+                    <button class="btn-action download"><i class="bi bi-download"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Art. 8</td>
+                  <td>Mantenimiento de fachadas</td>
+                  <td>Mantener en buen estado la fachada visible de su unidad.</td>
+                  <td>2023-09-01</td>
+                  <td>Normativa Técnica</td>
+                  <td>
+                    <button class="btn-action view"><i class="bi bi-eye"></i></button>
+                    <button class="btn-action download"><i class="bi bi-download"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Art. 33</td>
+                  <td>Asambleas y votaciones</td>
+                  <td>Asamblesa y el sistema de votación válido.</td>
+                  <td>2023-11-05</td>
+                  <td>Procedimiento Administrativo</td>
+                  <td>
+                    <button class="btn-action view"><i class="bi bi-eye"></i></button>
+                    <button class="btn-action download"><i class="bi bi-download"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Art. 2</td>
+                  <td>Ingreso de visitantes</td>
+                  <td>Permitir visitantes a zonas privada y comunes.</td>
+                  <td>2024-03-10</td>
+                  <td>Política de Seguridad</td>
+                  <td>
+                    <button class="btn-action view"><i class="bi bi-eye"></i></button>
+                    <button class="btn-action download"><i class="bi bi-download"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Art. 17</td>
+                  <td>Cuotas de administración</td>
+                  <td>Consecuencias del no pago de las cuotas.</td>
+                  <td>2023-04-20</td>
+                  <td>Reglamento Económico</td>
+                  <td>
+                    <button class="btn-action view"><i class="bi bi-eye"></i></button>
+                    <button class="btn-action download"><i class="bi bi-download"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

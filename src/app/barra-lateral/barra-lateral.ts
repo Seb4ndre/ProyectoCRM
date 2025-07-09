@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -9,4 +9,6 @@ import { RouterModule } from '@angular/router';
   templateUrl: './barra-lateral.html',
   styleUrls: ['./barra-lateral.css'],
 })
-export class BarraLateral {}
+export class BarraLateral {
+   @Input() oculta = false;
+}

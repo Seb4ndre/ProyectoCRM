@@ -19,20 +19,23 @@
   </head>
 
   <body>
-    <app-barra-superior></app-barra-superior>
-    <app-barra-lateral></app-barra-lateral>
+    <!-- Barra superior -->
+    <app-barra-superior (toggleMenu)="toggleSidebar()"></app-barra-superior>
 
-    <div class="main-wrapper">
-      <div class="titulo-tabla">
-        <div class="titulo-tabla-texto">
-          <h2>Propiedades horizontales</h2>
-          <p>Lista de propiedades horizontales</p>
+    <div class="contenido-flex">
+      <!-- Barra lateral -->
+      <app-barra-lateral [oculta]="sidebarOculta"></app-barra-lateral>
+
+      <div class="main-wrapper" [class.expandido]="sidebarOculta">
+        <div class="titulo-tabla">
+          <div class="titulo-tabla-texto">
+            <h2>Propiedades horizontales</h2>
+            <p>Lista de propiedades horizontales</p>
+          </div>
+          <button class="btn-add">Añadir PH</button>
         </div>
-        <button class="btn-add">Añadir PH</button>
-      </div>
 
       <div class="container main-container">
-        <div class="tabla-scroll-wrapper">
           <table class="styled-table">
             <thead>
               <tr>

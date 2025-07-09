@@ -10,4 +10,10 @@ import { BarraSuperior } from '../barra-superior/barra-superior';
   templateUrl: './vista-normativas.html',
   styleUrl: './vista-normativas.css',
 })
-export class VistaNormativas {}
+export class VistaNormativas {
+  sidebarOculta = false;
+
+  toggleSidebar() {
+    this.sidebarOculta = !this.sidebarOculta;
+  }
+}
