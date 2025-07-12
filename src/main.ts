@@ -6,6 +6,8 @@ import { VistaAsociados } from './app/vista-asociados/vista-asociados';
 import { VistaPh } from './app/vista-ph/vista-ph';
 import { VistaNormativas } from './app/vista-normativas/vista-normativas';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { dashboard } from './app/dashboard/dashboard';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'vista-asociados', component: VistaAsociados },
   { path: 'vista-normativas', component: VistaNormativas },
   { path: 'vista-ph', component: VistaPh },
+  { path: 'dashboard', component: dashboard },
+  { path: 'property-dashboard', component: dashboard },
   { path: '**', redirectTo: '/login' }, // Ruta wildcard para manejar rutas no encontradas
 ];
 
