@@ -27,9 +27,10 @@ export class LoginComponent {
     };
 
   this.configuracionesApiServices.ChequearID(datos).subscribe(
-    (res: boolean) => {
-      if (res) {
-        // Login exitoso
+    (res) => {
+      console.log(res)
+      if (res.autenticado === true) {
+        localStorage.setItem('rolId', res.rolId.toString());
         this.router.navigate(['/vista-asociados']);
       } else {
         alert('Usuario o contraseña incorrectos');
