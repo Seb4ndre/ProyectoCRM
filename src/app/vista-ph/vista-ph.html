@@ -32,10 +32,43 @@
             <h2>Propiedades horizontales</h2>
             <p>Lista de propiedades horizontales</p>
           </div>
-          <button class="btn-add">Añadir PH</button>
+          <button class="btn-add" (click)="abrirFormulario()">Añadir PH</button>
         </div>
 
-      <div class="container main-container">
+        <!-- Formulario emergente -->
+        <div class="overlay" *ngIf="mostrarFormulario" (click)="cerrarFormulario()"></div>
+        <div *ngIf="mostrarFormulario" class="formulario-flotante">
+          <h5 class="card-title mb-4 text-center">{{ modoEdicion ? 'Editar PH' : 'Nuevo PH' }}</h5>
+          <form (ngSubmit)="guardarPropiedad()" #formPH="ngForm">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre del PH</label>
+              <input type="text" id="nombre" class="form-control" [(ngModel)]="nuevaPropiedad.nombre" name="nombre" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="ubicacion" class="form-label">Ubicación</label>
+              <input type="text" id="ubicacion" class="form-control" [(ngModel)]="nuevaPropiedad.ubicacion" name="ubicacion" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="valor" class="form-label">Valor</label>
+              <input type="text" id="valor" class="form-control" [(ngModel)]="nuevaPropiedad.valor" name="valor" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="estado" class="form-label">Estado</label>
+              <input type="text" id="estado" class="form-control" [(ngModel)]="nuevaPropiedad.estado" name="estado" required />
+            </div>
+
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn btn-secondary me-2" (click)="cerrarFormulario()">Cancelar</button>
+              <button type="submit" class="btn btn-primary">{{ modoEdicion ? 'Actualizar' : 'Guardar' }}</button>
+            </div>
+          </form>
+        </div>
+        <!-- AQUÍ TERMINA EL FORMULARIO -->
+
+        <div class="container main-container">
           <table class="styled-table">
             <thead>
               <tr>
@@ -46,79 +79,44 @@
                 <th>Acción</th>
               </tr>
             </thead>
+
+            <!--Esto reemplaza el contenido estático y muestra dinámicamente los asociados de tu arreglo.-->
             <tbody>
-              <tr>
-                <td>PH BAHIA</td>
-                <td>Nueva Gorgona, Panamá Oeste</td>
-                <td>B/.285,000</td>
-                <td>Bien mantenido</td>
+              <tr *ngFor="let ph of propiedades; let i = index">
+                <td>{{ ph.nombre }}</td>
+                <td>{{ ph.ubicacion }}</td>
+                <td>{{ ph.valor }}</td>
+                <td>{{ ph.estado }}</td>
                 <td>
-                  <button class="btn-action edit">
+                  <button class="btn-action edit" (click)="editarPropiedad(i)">
                     <i class="bi bi-pencil-square"></i>
                   </button>
-                  <button class="btn-action delete">
-                    <i class="bi bi-trash-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>PH Greenview</td>
-                <td>Santa María, Ciudad de Panamá</td>
-                <td>B/.275,000</td>
-                <td>En excelente condición</td>
-                <td>
-                  <button class="btn-action edit">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn-action delete">
-                    <i class="bi bi-trash-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>PH Costamare</td>
-                <td>Costa Sur, Ciudad de Panamá</td>
-                <td>B/.235,000</td>
-                <td>Requiere atención</td>
-                <td>
-                  <button class="btn-action edit">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn-action delete">
-                    <i class="bi bi-trash-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>PH Asia</td>
-                <td>Costa del Este, Ciudad de Panamá</td>
-                <td>B/.325,000</td>
-                <td>Totalmente remodelado</td>
-                <td>
-                  <button class="btn-action edit">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn-action delete">
-                    <i class="bi bi-trash-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>PH ICON TOWER</td>
-                <td>Coco del Mar, Ciudad de Panamá</td>
-                <td>B/.550,000</td>
-                <td>Bien mantenido</td>
-                <td>
-                  <button class="btn-action edit">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button class="btn-action delete">
+                  <button class="btn-action delete" (click)="eliminarPropiedad(i)">
                     <i class="bi bi-trash-fill"></i>
                   </button>
                 </td>
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+
+      <!-- Modal de confirmación -->
+      <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header custom-modal-header">
+              <h5 class="modal-title" id="modalLabel">Confirmar eliminación</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              ¿Estás seguro de que deseas eliminar el PH <strong>"{{ propiedadSeleccionada?.nombre }}"</strong> ubicado en <em>{{ propiedadSeleccionada?.ubicacion }}</em>?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn custom-btn-delete" (click)="confirmarEliminacion()">Eliminar</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
