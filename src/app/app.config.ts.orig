@@ -1,0 +1,23 @@
+import {
+  ApplicationConfig,
+  provideBrowserGlobalErrorListeners,
+  provideZoneChangeDetection
+} from '@angular/core';
+import { provideRouter } from '@angular/router';
+<<<<<<< HEAD
+=======
+import { routes } from './app.routes';
+>>>>>>> Barra
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'; // ✅ Importar soporte HttpClient con interceptores
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+<<<<<<< HEAD
+=======
+    provideRouter(routes),
+>>>>>>> Barra
+    provideHttpClient(withInterceptorsFromDi()) // ✅ Soporte HttpClient con interceptores
+  ]
+};
