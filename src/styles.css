@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Imagenes, inputs y botones comunes */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input, button {
+  font-size: 1rem;
+}
+
+/* Utilidades */
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* Para pantallas medianas: tablets */
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .right-panel, .left-panel {
+    width: 100%;
+    flex: none;
+    border-radius: 0;
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Para pantallas pequeñas: móviles */
+@media screen and (max-width: 600px) {
+  .right-panel, .left-panel {
+    padding: 20px;
+  }
+
+  input, button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

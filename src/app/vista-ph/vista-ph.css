@@ -20,7 +20,7 @@ body {
   margin-left: 230px;
 }
 
-/* Cuando la barra lateral está oculta */
+/* barra lateral oculta */
 .main-wrapper.expandido {
   margin-left: 0 !important;
 }
@@ -138,9 +138,14 @@ body {
   color: #dc3545;
 }
 
-.custom-asociado-header {
-  background-color: #015288;
+.custom-modal-header {
+  background-color: #015288; 
   color: white;
+}
+
+.modal-content {
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .custom-btn-delete {
@@ -151,7 +156,7 @@ body {
 }
 
 .custom-btn-delete:hover {
-  background-color: #015288;
+  background-color: #015288; 
 }
 
 /* Capa que oscurece el fondo */
@@ -194,4 +199,68 @@ body {
 
 /*Samsung S8+*/
 @media screen and (max-width: 600px) {
+  .main-wrapper {
+    margin-left: 0;
+    margin-top: 60px;
+    padding: 1rem 0.5rem;
+  }
+
+  .titulo-tabla {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0.5rem;
+  }
+
+  .titulo-tabla-texto {
+    transform: none;
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .titulo-tabla h2 {
+    font-size: 1rem; 
+    margin: 0;
+  }
+
+  .titulo-tabla p {
+    font-size: 0.7rem;
+    margin: 0.2rem 0;
+  }
+
+  .btn-add {
+    width: auto;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    align-self: flex-end;
+    margin-top: 0.3rem;
+  }
+
+  /* Contenedor principal */
+  .main-container {
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  /* Scroll horizontal en tabla */
+  .tabla-scroll-wrapper {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .styled-table {
+    min-width: 600px; 
+    font-size: 0.7rem;
+  }
+
+  .styled-table th,
+  .styled-table td {
+    padding: 6px 8px;
+  }
+
+  /* Botones */
+  .btn-action {
+    font-size: 0.85rem;
+    margin: 0 2px;
+    padding: 2px 6px;
+  }
 }

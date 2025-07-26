@@ -6,11 +6,8 @@ body {
 
 .contenido-flex {
   display: flex;
-  width: 100%;
-  height: 100vh;
 }
 
-/* Contenido principal */
 .main-wrapper {
   background-color: #74c6bd;
   padding: 100px 2% 2% 2%;
@@ -20,7 +17,6 @@ body {
   margin-left: 230px;
 }
 
-/* Cuando la barra lateral está oculta */
 .main-wrapper.expandido {
   margin-left: 0 !important;
 }
@@ -75,7 +71,6 @@ body {
   background-color: #013f67;
 }
 
-/* Tabla con scroll */
 .tabla-scroll-wrapper {
   max-height: 300px;
   overflow-y: auto;
@@ -95,22 +90,6 @@ body {
   position: sticky;
   top: 0;
   z-index: 1;
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-}
-
-.styled-table tbody {
-  display: block;
-  height: 300px;
-  overflow-y: auto;
-  text-align: center;
-}
-
-.styled-table tbody tr {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
 }
 
 .styled-table th,
@@ -130,61 +109,12 @@ body {
   margin: 0 4px;
 }
 
-.btn-action.edit {
+.btn-action.view {
   color: #007bff;
 }
 
-.btn-action.delete {
-  color: #dc3545;
-}
-
-.custom-asociado-header {
-  background-color: #015288;
-  color: white;
-}
-
-.custom-btn-delete {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-.custom-btn-delete:hover {
-  background-color: #015288;
-}
-
-/* Capa que oscurece el fondo */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #015288;
-  z-index: 999;
-}
-
-/* Contenedor del formulario flotante */
-.formulario-flotante {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-}
-
-.formulario-grande {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 2rem;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+.btn-action.download {
+  color: #35dc7b;
 }
 
 

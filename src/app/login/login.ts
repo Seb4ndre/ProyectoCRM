@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ConfiguracionesApiServices } from 'app/ApiServices/ApiServices';
+import { ConfiguracionesApiServices } from '../ApiServices/ApiServices';
 
 @Component({
   standalone: true,
@@ -20,16 +20,17 @@ export class LoginComponent {
     private configuracionesApiServices: ConfiguracionesApiServices
   ) {}
 
-  onsubmit(): void {
+  onSubmit(): void {
     const datos = {
       usuario: this.email,
       contraseña: this.password
     };
 
   this.configuracionesApiServices.ChequearID(datos).subscribe(
-    (res: boolean) => {
-      if (res) {
-        // Login exitoso
+    (res) => {
+      console.log(res)
+      if (res.autenticado === true) {
+        localStorage.setItem('rolId', res.rolId.toString());
         this.router.navigate(['/vista-asociados']);
       } else {
         alert('Usuario o contraseña incorrectos');
