@@ -10,7 +10,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
+    //provideRouter(Routes),
     provideHttpClient(withInterceptorsFromDi()) // ✅ Soporte HttpClient con interceptores
   ]
 };
