@@ -84,10 +84,10 @@
             <!--Esto reemplaza el contenido estático y muestra dinámicamente los asociados de tu arreglo.-->
             <tbody>
               <tr *ngFor="let asociado of asociados; let i = index">
-                <td>{{ asociado.nombre }}</td>
-                <td>{{ asociado.email }}</td>
-                <td>{{ asociado.departamento }}</td>
-                <td>{{ asociado.rol }}</td>
+                <td>{{ asociado.NombreCompleto }}</td>
+                <td>{{ asociado.Correo }}</td>
+                <td>{{ asociado.Empresa }}</td>
+                <td>{{ asociado.Rol }}</td>
                 <td>
                   <button class="btn-action edit" (click)="editarAsociado(i)">
                     <i class="bi bi-pencil-square"></i>

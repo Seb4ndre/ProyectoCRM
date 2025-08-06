@@ -29,4 +29,13 @@ export class ConfiguracionesApiServices {
   ChequearID(datos: any): Observable<any> {
     return this.http.post<any>(`${environment.URL_Api}/UsuariosMA/TestUC`, datos);
   }
+  TraerUsuarios(): Observable<any> {
+    return this.http.get<any>(`${environment.URL_Api}/UsuariosMA/TraerUsuarios`);
+  }
+  TraerPHs(data: any) {
+    return this.http.post<any>(`${environment.URL_Api}/UsuariosMA/TraerPorUsuario`, data);
+  }
+  TraerNormativas(): Observable<any> {
+    return this.http.get<any>(`${environment.URL_Api}/UsuariosMA/TraerNormativas`);
+  }
 }

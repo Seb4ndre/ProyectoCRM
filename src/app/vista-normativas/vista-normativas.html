@@ -48,60 +48,23 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Art. 5</td>
-                  <td>Normas de convivencia</td>
-                  <td>Comportamiento en áreas comunes y horario de silencio.</td>
-                  <td>2023-02-15</td>
-                  <td>Reglamento interno</td>
+                <tr *ngFor="let normativa of normativas; let i = index">
+                  <td>{{ normativa.Articulo || normativa.id || 'Art. ' + (i + 1) }}</td>
+                  <td>{{ normativa.Titulo || normativa.title || normativa.nombre }}</td>
+                  <td>{{ normativa.Descripcion || normativa.description || normativa.contenido }}</td>
+                  <td>{{ normativa.FechaCreacion || normativa.fecha_creacion || normativa.created_at | date:'yyyy-MM-dd' }}</td>
+                  <td>{{ normativa.Categoria || normativa.tipo || normativa.category }}</td>
                   <td>
-                    <button class="btn-action view"><i class="bi bi-eye"></i></button>
+                    <button class="btn-action view" (click)="abrirArchivo(normativa.RutaArchivo)">
+                      <i class="bi bi-eye"></i>
+                    </button>
+
                     <button class="btn-action download"><i class="bi bi-download"></i></button>
                   </td>
                 </tr>
-                <tr>
-                  <td>Art. 8</td>
-                  <td>Mantenimiento de fachadas</td>
-                  <td>Mantener en buen estado la fachada visible de su unidad.</td>
-                  <td>2023-09-01</td>
-                  <td>Normativa Técnica</td>
-                  <td>
-                    <button class="btn-action view"><i class="bi bi-eye"></i></button>
-                    <button class="btn-action download"><i class="bi bi-download"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Art. 33</td>
-                  <td>Asambleas y votaciones</td>
-                  <td>Asamblesa y el sistema de votación válido.</td>
-                  <td>2023-11-05</td>
-                  <td>Procedimiento Administrativo</td>
-                  <td>
-                    <button class="btn-action view"><i class="bi bi-eye"></i></button>
-                    <button class="btn-action download"><i class="bi bi-download"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Art. 2</td>
-                  <td>Ingreso de visitantes</td>
-                  <td>Permitir visitantes a zonas privada y comunes.</td>
-                  <td>2024-03-10</td>
-                  <td>Política de Seguridad</td>
-                  <td>
-                    <button class="btn-action view"><i class="bi bi-eye"></i></button>
-                    <button class="btn-action download"><i class="bi bi-download"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Art. 17</td>
-                  <td>Cuotas de administración</td>
-                  <td>Consecuencias del no pago de las cuotas.</td>
-                  <td>2023-04-20</td>
-                  <td>Reglamento Económico</td>
-                  <td>
-                    <button class="btn-action view"><i class="bi bi-eye"></i></button>
-                    <button class="btn-action download"><i class="bi bi-download"></i></button>
-                  </td>
+                <!-- Mensaje cuando no hay datos -->
+                <tr *ngIf="normativas.length === 0">
+                  <td colspan="6" class="text-center">No hay normativas disponibles</td>
                 </tr>
               </tbody>
             </table>

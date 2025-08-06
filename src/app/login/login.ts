@@ -31,6 +31,7 @@ export class LoginComponent {
       console.log(res)
       if (res.autenticado === true) {
         localStorage.setItem('rolId', res.rolId.toString());
+        localStorage.setItem('username', this.email.toString());
         this.router.navigate(['/vista-asociados']);
       } else {
         alert('Usuario o contraseña incorrectos');
